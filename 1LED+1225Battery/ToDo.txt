@@ -1,0 +1,12 @@
+- Emailadresse zu klein
+- Fräsbrücken mit Löchern
+- Fragen warum äußerer Lötstoppring nicht bis zur Fräskante geht
+- kreatroniklogo als svg an Frank zur Schriftarteinbindung
+- Batteriehalter: Seitenpads größer machen
+- STM32 Pinkonfiguration im Reset-State überprüfen (PA9 bei Empty Flash UART Tx mit Ruhepegel von VDD)
+- LED kann größer sein-->Checken
+- Testboard mit UART und Analogpin für Poti
+
+Software:
+- Gamma-Korrektur https://hackaday.com/2016/08/23/rgb-leds-how-to-master-gamma-and-hue-for-perfect-brightness/
+- evtl. LUT für PWM-Werte

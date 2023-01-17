@@ -1,0 +1,322 @@
+*************************************************************
+FileName = 1RGB-LED-Board_CR12xx-TESTBOARD.GBR
+AutoAperture = True
+*************************************************************
+Generating : Courtyard
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GM15
+
+    Adding Layer      : Courtyard
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+    D59
+    D62
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GM1
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D52
+    D53
+    D54
+    D55
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D16
+    D18
+    D25
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D45
+    D54
+    D56
+    D57
+    D58
+    D64
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+    D54
+    D57
+    D64
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D54
+    D57
+    D59
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Board Outline
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D45
+    D54
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GD1
+
+    Adding Layer      : Board Outline
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D10
+    D69
+    D70
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : 1RGB-LED-Board_CR12xx-TESTBOARD.GG1
+
+    Adding Layer      : Board Outline
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D10
+    D69
+*************************************************************
+

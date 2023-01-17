@@ -1,0 +1,12 @@
+- STM8L101F2 oder F3
+
+- RGB-LED und PWM Controller separat (Inverter würde entfallen)
+
+- OSRAM LED mit matter Oberfläche https://www.osram.com/ecat/Multi CHIPLED® LRTBR98G/com/en/class_pim_web_catalog_103489/global/prd_pim_device_2190790/
+
+- Batteriehalter S8201-46R von Harwin
+
+- Mikrofon MMICT390200012
+
+- Switch MidMount 
+

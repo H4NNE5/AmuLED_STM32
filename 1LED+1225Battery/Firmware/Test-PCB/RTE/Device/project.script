@@ -1,0 +1,6 @@
+load STM32L011G4Ux 
+project name STCubeGenerated 
+project toolchain "MDK-ARM V5" 
+project path "C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\Firmware\Test-PCB\RTE\Device\STM32L011G4Ux\" 
+set tpl_path "C:\Users\kreat\AppData\Local\Arm\Packs\Keil\STM32L0xx_DFP\2.2.0\MDK\CubeMX" 
+set dest_path "STM32L011G4Ux" 

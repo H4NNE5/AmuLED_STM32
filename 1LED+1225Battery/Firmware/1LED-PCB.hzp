@@ -1,0 +1,126 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="1LED" target="8" version="2">
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="None"
+    hidden="Yes" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 1"
+    hidden="Yes" />
+  <configuration
+    Name="THUMB"
+    Platform="ARM"
+    arm_instruction_set="Thumb"
+    arm_library_instruction_set="Thumb"
+    c_preprocessor_definitions="__THUMB"
+    hidden="Yes" />
+  <configuration
+    Name="THUMB Debug"
+    gcc_debugging_level="Level 2"
+    inherited_configurations="THUMB;Debug" />
+  <configuration
+    Name="THUMB Release"
+    inherited_configurations="THUMB;Release" />
+  <project Name="Test-PCB">
+    <configuration
+      CMSIS_CORE="Yes"
+      Name="Common"
+      Placement="Flash"
+      Target="STM32L011G4"
+      analyze_after_compile="Yes"
+      arm_architecture="v6M"
+      arm_compiler_variant="gcc"
+      arm_core_type="Cortex-M0+"
+      arm_fp_abi="Soft"
+      arm_fpu_type="None"
+      arm_linker_heap_size="800"
+      arm_linker_jtag_pad_pre_dr="1"
+      arm_linker_jtag_pad_pre_ir="5"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="800"
+      arm_simulator_memory_simulation_filename="$(TargetsDir)/STM32/STM32SimulatorMemory$(HostDLL)"
+      arm_simulator_memory_simulation_parameter="STM32L011G4;0x4000;0x800"
+      arm_target_loader_applicable_loaders="Flash"
+      arm_target_loader_default_loader="Flash"
+      arm_target_trace_interface_type="None"
+      c_preprocessor_definitions="STM32L011xx;STARTUP_FROM_RESET;__NO_SYSTEM_INIT;INITIALIZE_STACK"
+      c_user_include_directories="$(TargetsDir)/STM32/include;$(ProjectDir)/$(ProjectName)/hardware;$(ProjectDir)/$(ProjectName)/misc;$(SolutionDir)/CMSIS"
+      debug_register_definition_file="$(TargetsDir)/STM32/STM32L0x1_Peripherals.xml"
+      gcc_c_language_standard="gnu17"
+      gcc_cplusplus_language_standard="gnu++20"
+      gcc_debugging_level="None"
+      gcc_enable_all_warnings="Yes"
+      gcc_optimization_level="None"
+      linker_memory_map_file="$(TargetsDir)/STM32/STM32L011G4_MemoryMap.xml"
+      linker_output_format="bin"
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      macros="DeviceVectorsFile=STM32L011xx.vec"
+      project_directory=""
+      project_type="Executable"
+      property_groups_file_path="$(TargetsDir)/STM32/propertyGroups.xml"
+      target_get_partname_script="GetPartName()"
+      target_match_partname_script="MatchPartName(&quot;$(Target)&quot;)"
+      target_script_file="$(TargetsDir)/STM32/STM32_Target.js"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration
+      Name="Debug"
+      gcc_debugging_level="Level 3"
+      gcc_optimization_level="Debug" />
+    <configuration
+      Name="Flash"
+      arm_target_flash_loader_file_path="$(LOADER:$(TargetsDir)/STM32/Release/STM32L0_2K_Loader_rpc.elf)"
+      arm_target_loader_can_erase_all="No"
+      arm_target_loader_can_lock_all="No"
+      arm_target_loader_can_lock_range="No"
+      arm_target_loader_can_unlock_all="No"
+      arm_target_loader_can_unlock_range="No"
+      target_reset_script="FLASHReset()" />
+    <configuration Name="RAM" target_reset_script="Reset()" />
+    <configuration
+      Name="THUMB"
+      gcc_debugging_level="Level 3"
+      gcc_optimization_level="Debug" />
+    <configuration
+      Name="THUMB Release"
+      gcc_debugging_level="None"
+      gcc_optimization_level="None" />
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <folder Name="hardware">
+        <file file_name="Test-PCB/hardware/ISR.cpp" />
+        <file file_name="Test-PCB/hardware/LED.cpp" />
+        <file file_name="Test-PCB/hardware/LED.h" />
+        <file file_name="Test-PCB/hardware/Pushbutton.cpp" />
+        <file file_name="Test-PCB/hardware/Pushbutton.h" />
+        <file file_name="Test-PCB/hardware/gpio.cpp" />
+        <file file_name="Test-PCB/hardware/gpio.h" />
+        <file file_name="Test-PCB/hardware/hardware.cpp" />
+        <file file_name="Test-PCB/hardware/hardware.h" />
+        <file file_name="Test-PCB/hardware/pwm.cpp" />
+        <file file_name="Test-PCB/hardware/pwm.h" />
+      </folder>
+      <folder Name="misc">
+        <file file_name="Test-PCB/misc/control.cpp" />
+        <file file_name="Test-PCB/misc/control.h" />
+        <file file_name="Test-PCB/misc/misc.cpp" />
+        <file file_name="Test-PCB/misc/misc.h" />
+        <file file_name="Test-PCB/misc/semaphore.cpp" />
+        <file file_name="Test-PCB/misc/semaphore.h" />
+      </folder>
+      <file file_name="Test-PCB/main.cpp" />
+    </folder>
+    <folder Name="System Files">
+      <folder Name="CMSIS" exclude="" filter="" path="CMSIS" recurse="Yes" />
+      <file file_name="Test-PCB/STM32L011xx.vec" />
+      <file file_name="Test-PCB/STM32_Startup.s" />
+      <file file_name="thumb_crt0.s" />
+    </folder>
+  </project>
+</solution>

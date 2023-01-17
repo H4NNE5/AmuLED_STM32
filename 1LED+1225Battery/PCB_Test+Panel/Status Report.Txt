@@ -1,0 +1,12 @@
+Output: GERBER PCB NC Drill Files
+Type  : NC Drill
+From  : PCB Document [1RGB-LED-Board_CR12xx.PcbDoc]
+   Generated File[1RGB-LED-Board_CR12xx.TXT]
+   Generated File[1RGB-LED-Board_CR12xx.LDP]
+   Generated File[1RGB-LED-Board_CR12xx.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 08:55:55 On 11.10.2017

@@ -1,0 +1,11 @@
+DRC Rules Export File for PCB: C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc
+RuleKind=MinimumAnnularRing|RuleName=MAR: 150µ|Scope=Board|Minimum=5.91
+RuleKind=MinimumAnnularRing|RuleName=MAR: 100µ|Scope=Board|Minimum=3.94
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=2.95
+RuleKind=SolderMaskExpansion|RuleName=GND Pads|Scope=Board|Minimum=0.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=PCB Rand - Via|Scope=Board|Minimum=19.69
+RuleKind=Clearance|RuleName=GND-Poly zu Keepout und Rand|Scope=Board|Minimum=9.84
+RuleKind=Clearance|RuleName=PCB Rand|Scope=Board|Minimum=19.69
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=4.92

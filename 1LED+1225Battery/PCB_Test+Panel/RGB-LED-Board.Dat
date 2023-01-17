@@ -1,0 +1,9 @@
+﻿Field=#~Integer~#~50|Field=Designator~String~Designator~64|Field=Quantity~Integer~Quantity~99|Field=Comment~String~Comment~126|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~RGB-LED-Board.PrjPCB|ReportField=ProjectFullPath~C:\Users\Hannes\Dropbox\Projekte\Elektronik\RGB-LED-Board\1LED+2032Battery\PCB\RGB-LED-Board.PrjPCB|ReportField=Title~Bill of Materials For Project [RGB-LED-Board.PrjPCB] (No PCB Document Selected)|ReportField=TotalQuantity~13|ReportField=ReportTime~23:48:24|ReportField=ReportDate~11.08.2016|ReportField=ReportDateTime~11.08.2016 23:48:24|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~11.08.2016|ReportField=CurrentTime~23:10:17|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\Hannes\Dropbox\Projekte\Elektronik\RGB-LED-Board\1LED+2032Battery\PCB\Sheet1.SchDoc|ReportField=DocumentName~Sheet1.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~11.08.2016|ReportField=Organization~|ReportField=ProjectName~RGB-LED-Board.PrjPCB|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~RGB-LED-Board.PrjPCB|ReportField=DataSourceFullPath~C:\Users\Hannes\Dropbox\Projekte\Elektronik\RGB-LED-Board\1LED+2032Battery\PCB\RGB-LED-Board.PrjPCB
+1|C1, C2, C3|3|2u2
+2|R1, R2, R3|3|39K
+3|S1, S2|2|Taster
+4|BT1|1|Knopfzelle
+5|IC1|1|ChargePump_REG710NA-5
+6|LED1|1|LED_RGB_WS2812B
+7|S3|1|Vibrationsschalter
+8|U1|1|ATtiny25V-10SU

@@ -1,0 +1,95 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc
+Date     : 30.09.2021
+Time     : 00:57:47
+
+WARNING: Unplated multi-layer pad(s) detected
+   Pad N1-3(2.483mm,31.463mm) on Multi-Layer on Net GND
+
+Processing Rule : Clearance Constraint (Gap=0.25mm) (InNet('GND') and InPolygon),(OnLayer('Keep-Out Layer') or OnLayer('Board Outline'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) (OnLayer('Board Outline') or OnLayer('Keep-Out Layer')),(IsVia)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) (All),(OnLayer('Board Outline') or OnLayer('Keep-Out Layer'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.125mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net NetJ4_2 Between Track (10.615mm,7.198mm)(10.615mm,14.007mm) on Top Layer And Track (26.184mm,7.129mm)(26.532mm,6.781mm) on Top Layer 
+Rule Violations :1
+
+Processing Rule : Un-Routed Net Constraint ( ((Footprint = 'BAT-CR1225-SMD-HARWIN')) )
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.125mm) (Max=2mm) (Preferred=0.2mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.1mm) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.15mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.1mm) (Max=6mm) (Disabled)(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=6mm) (Disabled)(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.2mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.025mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.013mm < 0.025mm) Between Pad R13-2(9.633mm,35.612mm) on Top Layer And Text "DIO" (9.39mm,36.025mm) on Top Solder [Top Solder] Mask Sliver [0.013mm]
+Rule Violations :1
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room LED-BOOST (Bounding Region = (75.321mm, 40.449mm, 87.421mm, 51.449mm) (InComponentClass('LED-BOOST'))
+   Violation between Room Definition: Between Room LED-BOOST (Bounding Region = (75.321mm, 40.449mm, 87.421mm, 51.449mm) (InComponentClass('LED-BOOST')) And Small Component JP3-CON-01-TESTPOINT (15.977mm,21.696mm) on Top Layer 
+Rule Violations :1
+
+Processing Rule : Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main'))
+   Violation between Room Definition: Between Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main')) And SMT Small Component FID1-FIDUCIAL (2.102mm,34.227mm) on Top Layer 
+   Violation between Room Definition: Between Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main')) And SMT Small Component FID3-FIDUCIAL-CIRCLE-PASTE (1.965mm,37.278mm) on Top Layer 
+Rule Violations :2
+
+Processing Rule : Room LED (Bounding Region = (87.896mm, 42.352mm, 101.628mm, 61.117mm) (InComponentClass('LED'))
+Rule Violations :0
+
+Processing Rule : Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU'))
+   Violation between Room Definition: Between Component S1-SWI-PU (2.551mm,6.062mm) on Top Layer And Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU')) 
+   Violation between Room Definition: Between Component S2-SWI-PU (1.783mm,14.727mm) on Top Layer And Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU')) 
+   Violation between Room Definition: Between Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU')) And Small Component J8-CON-03 (25.071mm,39.558mm) on Top Layer 
+Rule Violations :3
+
+Processing Rule : Room MIC (Bounding Region = (71.155mm, 51.358mm, 74.905mm, 57.358mm) (InComponentClass('MIC'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 8
+Waived Violations : 0
+Time Elapsed        : 00:00:04

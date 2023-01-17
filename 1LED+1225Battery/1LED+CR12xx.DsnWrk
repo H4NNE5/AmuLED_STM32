@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=PCB_Test+Panel\1LED+CR12xx_TESTBOARD.PrjPCB
+[Project2]
+ProjectPath=PCB_Main\1RGB-LED-Board_CR12xx.PrjPCB
+[Project3]
+ProjectPath=..\..\Altium_Scripts\altium-scripts-libraries-master\AdjustDesignators2\Adjust Designators 2.PrjScr

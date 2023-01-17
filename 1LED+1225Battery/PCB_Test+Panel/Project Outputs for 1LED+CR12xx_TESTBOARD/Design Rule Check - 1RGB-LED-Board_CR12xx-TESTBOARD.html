@@ -1,0 +1,427 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">30.09.2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:57:47</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:04</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc" class="file"><acronym title="C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc">C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">1</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">8</td></tr>
+</table>
+</td>
+</table><a name="IDY4PTWXXMEIW5LLWK5XYQNHB3DGGXANR3JB1D5LEK2Z01BXDLWNBI"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDOBWENXFAB3HDEVD5ZXDA2FXWIUY5LIX11SYZEKYL53M0RTC1T4C">Unplated multi-layer pad(s) detected</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">1</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGUSVYWS02CFAPHCQAWEQOYNZFMAZOQBVBUI1WL2OFR4BJ4LHRDE">Clearance Constraint (Gap=0.25mm) (InNet('GND') and InPolygon),(OnLayer('Keep-Out Layer') or OnLayer('Board Outline'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDMF2CLUANTCGBXJHONRRIVP5XP0ANXE3LW453HB1HFAQY4EEQH4C">Clearance Constraint (Gap=0.5mm) (OnLayer('Board Outline') or OnLayer('Keep-Out Layer')),(IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKDQGTWRP4PJLCSY5YBIJ3OU0PFJZST3FVSZOYIOHO50XEFFWZ0HF">Clearance Constraint (Gap=0.5mm) (All),(OnLayer('Board Outline') or OnLayer('Keep-Out Layer'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHEFMYLSHBFUTCPO0QXKJJOHL1LDCFC0X1FB2IWCUDWKG1OJSUDAH">Clearance Constraint (Gap=0.125mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWP5X21FFBARLBSEWBNAW2S1OTNATARF0TATAHTCIUE3RDLXRGDS">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDI4O01SZUBYCFN0HEGPGOT1S5FI0VVIEC4JMLVMHH122PIALODKDE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHXXFBUGUWBAMHPK0LWZHN054ZFMGCKPBKT2QYKPLADAASJL3OF5D">Un-Routed Net Constraint ( ((Footprint = 'BAT-CR1225-SMD-HARWIN')) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPI0VAMA3WJI1EPRXEWNNM1KGMHWXK3PO4LYQB3ITHVDQI3T44HYP">Width Constraint (Min=0.125mm) (Max=2mm) (Preferred=0.2mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTEXVAUPV0SD2LQQJZK0LZY2PXCRQVY3LRDWDJMBMXHBSV1IEXQSP">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP0MVVU5PS0MICA33ETWQLHK5TKJTIVBAMZGUPVMO0XAA45IMXOSG">Minimum Annular Ring (Minimum=0.1mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZTA4G332NBCBKVLEL22OPIQYELYVAMT5I1XFVSHZ3IGZIPM1DCXM">Minimum Annular Ring (Minimum=0.15mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4O4OPCIETWRSKMELSAAZS0ZN2GC4JIWGL2CLJ4BYISZDL5YLYPWO">Hole Size Constraint (Min=0.2mm) (Max=6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTUUCWP5FF2UPBHJ2SDQRV1OQGPSBRSP5HOZDTUOKKDMSJ0SXF3PN">Hole Size Constraint (Min=0.1mm) (Max=6mm) (Disabled)(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAWXVGNX0FFOXBYMB1A1QXAUWMF35AXRVJYPIKKDZVIN1ZEXKQIEK">Hole Size Constraint (Min=0.3mm) (Max=6mm) (Disabled)(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTCQFM0TPD0EKJ4S5F2IVNH2RHJE5AFCQSUF2BJDHEKUG341N1MKP">Hole To Hole Clearance (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4HX33C51IRYRHLHXXD2Q4KSVGOEDFWJEBHP3K3DOKOQBQ2MBR4OI">Minimum Solder Mask Sliver (Gap=0.025mm) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHUELWD4M0RP5BNZ5UJWRMRY2ZE2DUGTX24F4LKPIYKJTDJ0KTWKK">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4O0KKCMEYXCLFLDA4YLCE2FH4PQRGEKYGYAO5ILUX1AT5AWH4MBC">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID32RXKNY2OAOLLUUG0WOSVXMM5M1AWN55Z1GAMGL1M33NEBIV542N">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR0CWD13XCZVBOXS03EKYIGTLNPGFUXS51XZTXIE4SQUUK142A1F">Room LED-BOOST (Bounding Region = (75.321mm, 40.449mm, 87.421mm, 51.449mm) (InComponentClass('LED-BOOST'))</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTD3DM3C5BCLDJHYYAWRUWFF3BMDUBPJTKSXII4HWX4DWBDKLEETN">Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main'))</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKPY5P3YBJPEEH4R3TQ5QU2M4FMYPEMZ5JKKO30IZKNYWGMEH3QYF">Room LED (Bounding Region = (87.896mm, 42.352mm, 101.628mm, 61.117mm) (InComponentClass('LED'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNYN5CROAOMZOBLE0NP3FVBAQTKEMHQAU1ILQP4YKQMVHEM23EBI">Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU'))</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDD5M0YK5YAKCQKEKR1NTFSBXIMPQTLCHYJW1YFPEEJTVA5W5PWSEN">Room MIC (Bounding Region = (71.155mm, 51.358mm, 74.905mm, 57.358mm) (InComponentClass('MIC'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4XBELHTGPP1JO2UGARRCFTOTRCPTWFYRU5OND1GYTNKQBXELSGCN">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">8</td>
+</tr>
+</table><br><a name="ID3QYC3DOLGOT3JXL1V0TBDOQCLB3JEZ0U1TFDLYM31GZU44H0KGZK"><h2>Warnings</h2></a><a name="IDDOBWENXFAB3HDEVD5ZXDA2FXWIUY5LIX11SYZEKYL53M0RTC1T4C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Unplated multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2846.253mil|Location2.X=2910.229mil|Location1.Y=2161.876mil|Location2.Y=2225.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2846.253mil|Location2.X=2910.229mil|Location1.Y=2161.876mil|Location2.Y=2225.852mil|Absolute=True">Pad N1-3(2.483mm,31.463mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1980.315mil|Location2.X=3819.685mil|Location1.Y=1019.256mil|Location2.Y=2893.701mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1980.315mil|Location2.X=3819.685mil|Location1.Y=1019.256mil|Location2.Y=2893.701mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDI4O01SZUBYCFN0HEGPGOT1S5FI0VVIEC4JMLVMHH122PIALODKDE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3098.406mil|Location2.X=3911.361mil|Location1.Y=1138.547mil|Location2.Y=1335.828mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3098.406mil|Location2.X=3911.361mil|Location1.Y=1138.547mil|Location2.Y=1335.828mil|Absolute=True">Un-Routed Net Constraint: Net NetJ4_2 Between Track (10.615mm,7.198mm)(10.615mm,14.007mm) on Top Layer And Track (26.184mm,7.129mm)(26.532mm,6.781mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID4HX33C51IRYRHLHXXD2Q4KSVGOEDFWJEBHP3K3DOKOQBQ2MBR4OI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.025mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3149.5mil|Location2.X=3151.734mil|Location1.Y=2372.113mil|Location2.Y=2374.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3149.5mil|Location2.X=3151.734mil|Location1.Y=2372.113mil|Location2.Y=2374.348mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.013mm &lt; 0.025mm) Between Pad R13-2(9.633mm,35.612mm) on Top Layer And Text "DIO" (9.39mm,36.025mm) on Top Solder [Top Solder] Mask Sliver [0.013mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDR0CWD13XCZVBOXS03EKYIGTLNPGFUXS51XZTXIE4SQUUK142A1F"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room LED-BOOST (Bounding Region = (75.321mm, 40.449mm, 87.421mm, 51.449mm) (InComponentClass('LED-BOOST'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2965.403mil|Location2.X=3442.996mil|Location1.Y=1592.464mil|Location2.Y=2025.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2965.403mil|Location2.X=3442.996mil|Location1.Y=1592.464mil|Location2.Y=2025.534mil|Absolute=True">Room Definition: Between Room LED-BOOST (Bounding Region = (75.321mm, 40.449mm, 87.421mm, 51.449mm) (InComponentClass('LED-BOOST')) And Small Component JP3-CON-01-TESTPOINT (15.977mm,21.696mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDTD3DM3C5BCLDJHYYAWRUWFF3BMDUBPJTKSXII4HWX4DWBDKLEETN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2827.834mil|Location2.X=4637.795mil|Location1.Y=952.756mil|Location2.Y=2795.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2827.834mil|Location2.X=4637.795mil|Location1.Y=952.756mil|Location2.Y=2795.276mil|Absolute=True">Room Definition: Between Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main')) And SMT Small Component FID1-FIDUCIAL (2.102mm,34.227mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2822.418mil|Location2.X=4637.795mil|Location1.Y=952.756mil|Location2.Y=2795.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2822.418mil|Location2.X=4637.795mil|Location1.Y=952.756mil|Location2.Y=2795.276mil|Absolute=True">Room Definition: Between Room main (Bounding Region = (73.2mm, 24.2mm, 117.8mm, 71mm) (InComponentClass('main')) And SMT Small Component FID3-FIDUCIAL-CIRCLE-PASTE (1.965mm,37.278mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNYN5CROAOMZOBLE0NP3FVBAQTKEMHQAU1ILQP4YKQMVHEM23EBI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2535.433mil|Location2.X=3822.835mil|Location1.Y=1015.7mil|Location2.Y=2925.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2535.433mil|Location2.X=3822.835mil|Location1.Y=1015.7mil|Location2.Y=2925.197mil|Absolute=True">Room Definition: Between Component S1-SWI-PU (2.551mm,6.062mm) on Top Layer And Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2535.433mil|Location2.X=3822.835mil|Location1.Y=1406.039mil|Location2.Y=2925.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2535.433mil|Location2.X=3822.835mil|Location1.Y=1406.039mil|Location2.Y=2925.197mil|Absolute=True">Room Definition: Between Component S2-SWI-PU (1.783mm,14.727mm) on Top Layer And Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2535.433mil|Location2.X=3929.953mil|Location1.Y=1913.386mil|Location2.Y=2925.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\kreat\FileChest\Projekte\Elektronik\RGB-LED-Board\1LED+1225Battery\PCB_Test+Panel\1RGB-LED-Board_CR12xx-TESTBOARD.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2535.433mil|Location2.X=3929.953mil|Location1.Y=1913.386mil|Location2.Y=2925.197mil|Absolute=True">Room Definition: Between Room MCU (Bounding Region = (64.4mm, 48.6mm, 97.1mm, 74.3mm) (InComponentClass('MCU')) And Small Component J8-CON-03 (25.071mm,39.558mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
